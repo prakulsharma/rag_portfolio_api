@@ -8,11 +8,27 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain.schema import Document
+from fastapi.middleware.cors import CORSMiddleware
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Define the persist directory for ChromaDB
 persist_directory = "./tmp/chromadb"
@@ -155,10 +171,7 @@ class QueryResponse(BaseModel):
 
 @app.post("/query/", response_model=QueryResponse)
 async def query_endpoint(request: QueryRequest):
-    # Pass the question from the request to the rag_chain function
     result = rag_chain(request.question)
-
-    # Return the response as JSON
     return QueryResponse(answer=result)
 
 
@@ -175,4 +188,4 @@ async def query_endpoint(request: QueryRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)
