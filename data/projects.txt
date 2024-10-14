@@ -1,0 +1,13 @@
+Some of the projects that Prakul has worked on are:
+
+1. Quantitative Topic Modeling, an exploration into the financial documents
+Duration: May 2024 – Jun 2024
+Prakul led the creation of topic models for 10-K SEC filings for British Columbia Investment Management Corporation using BERTopic, improving coherence scores by 12% over the baseline LDA model. By integrating sentiment and topic distributions, he successfully enhanced financial performance prediction accuracy by 10%. His work in optimizing the preprocessing pipeline using spaCy resulted in a 50% reduction in data preparation time, significantly improving efficiency.
+
+2. TextDetox, a Multilingual Text Detoxification
+Duration: Mar 2024 – Apr 2024
+In this project, Prakul spearheaded the development of multilingual detoxification models for nine languages. He fine-tuned Flan-T5 on the ParaDetox dataset, which improved STA, SIM, and CHRF benchmarks by 12% over the baseline BART model. Through the application of LoRA fine-tuning on the TinyLlama model, he achieved a 27% enhancement in detoxification performance while maintaining linguistic accuracy and preserving meaning across languages.
+
+3. ARCOT, Abstraction and Reasoning Corpus
+Duration: Feb 2024 – Mar 2024
+Prakul contributed to the annotation of over 400 problem-solving tasks using chain-of-thought prompting in this project, which resulted in a 20% improvement in reasoning accuracy for large language models. Additionally, he designed a Streamlit application to search and view tasks using cosine similarity for phrases, reducing retrieval time by 70%, greatly enhancing the usability of the system for end-users.
