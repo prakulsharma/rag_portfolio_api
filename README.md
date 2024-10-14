@@ -1,1 +1,1 @@
-# rag_portfolio_api
+# API for RAG implementation on portfolio website
