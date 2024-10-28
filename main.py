@@ -313,12 +313,15 @@ def rag_chain(question, style="concise"):
         logging.error(f"Error during retrieval or response generation: {str(e)}")
         return f"Error in retrieval or generation: {str(e)}"
 
+
 class QuestionValidationError(HTTPException):
     """
     Custom exception for question validation errors.
     """
+
     def __init__(self, detail: str):
         super().__init__(status_code=400, detail=detail)
+
 
 class QueryRequest(BaseModel):
     """
@@ -342,7 +345,7 @@ class QueryResponse(BaseModel):
     answer: str
 
 
-@app.post("/", response_model=QueryResponse)
+@app.post("/query/", response_model=QueryResponse)
 async def query_endpoint(request: QueryRequest):
     """
     Endpoint to process a query request and return a generated response.
@@ -364,6 +367,15 @@ async def query_endpoint(request: QueryRequest):
         logging.error(f"Error in query endpoint: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+
+@app.get("/", include_in_schema=False)
+async def read_root():
+    return {"message": "Welcome to Prakul's portfolio website!"}
+
+
+@app.head("/", include_in_schema=False)
+async def read_root_head():
+    return {"message": "Welcome to Prakul's portfolio website!"}
 
 
 # if __name__ == "__main__":
