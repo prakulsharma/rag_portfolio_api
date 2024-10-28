@@ -342,7 +342,7 @@ class QueryResponse(BaseModel):
     answer: str
 
 
-@app.post("/query/", response_model=QueryResponse)
+@app.post("/", response_model=QueryResponse)
 async def query_endpoint(request: QueryRequest):
     """
     Endpoint to process a query request and return a generated response.
@@ -378,4 +378,4 @@ async def query_endpoint(request: QueryRequest):
 #         print(f"Bot: {result}\n")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=10000)
