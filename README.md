@@ -1,5 +1,5 @@
 # RAG Portfolio API
-Welcome to the RAG Portfolio API, a demonstration of using Retrieval-Augmented Generation (RAG) to interactively answer questions and present information about my projects and experience. This project utilizes state-of-the-art natural language processing techniques combined with a well-structured document retrieval system to provide concise, detailed, or conversational responses based on your queries.
+Welcome to the RAG Portfolio API (being used at https://prakulsharma.github.io/), a demonstration of using Retrieval-Augmented Generation (RAG) to interactively answer questions and present information about my projects and experience. This project utilizes state-of-the-art natural language processing techniques combined with a well-structured document retrieval system to provide concise, detailed, or conversational responses based on your queries.
 
 ## What is RAG?
 Retrieval-Augmented Generation (RAG) is a hybrid approach that combines information retrieval with generative text models. It augments the generative model's output with relevant, contextually retrieved documents, resulting in more accurate and context-aware responses. This technique is particularly useful in scenarios where we want to provide precise answers based on a pre-defined set of documents, such as personal portfolios, knowledge bases, or FAQs.
@@ -10,18 +10,18 @@ In this project, I have built a FastAPI-based web service that serves as a dynam
 The key feature of this implementation is its use of RAG to retrieve relevant documents from a vector store and generate answers using a language model hosted on Hugging Face’s Inference API.
 
 ## Features
-- Dynamic Document Retrieval: Utilizes the ChromaDB vector store to dynamically retrieve contextually relevant information from a document collection.
-- Adaptive Question Responses: Provides concise, detailed, or casual responses based on the style specified.
-- Token Management with Cooldown: Uses multiple Hugging Face API tokens with a cooldown mechanism to avoid exceeding rate limits.
-- Flexible Deployment: Deployed as a FastAPI server capable of handling CORS, making it accessible from different frontend origins like GitHub Pages.
-
+- Dynamic Document Retrieval
+- Adaptive Question Responses
+- Token Management with Cooldown
+- Flexible Deployment
+  
 ## Technologies Used
-- FastAPI: A modern, fast web framework for building APIs with Python 3.10+.
-- LangChain: A powerful library that simplifies building language model-based applications.
-- ChromaDB: A fast, scalable vector store to manage and retrieve document embeddings.
-- Hugging Face Inference API: To interact with state-of-the-art language models for generating context-aware responses.
-- Python-Dotenv: For securely managing environment variables.
-- Uvicorn: An ASGI server for serving FastAPI applications.
+- FastAPI
+- LangChain
+- ChromaDB
+- Hugging Face Inference API
+- Python-Dotenv
+- Uvicorn
 
 ## Implementation Details
 The project works in the following way:
